@@ -158,9 +158,7 @@ public class Semantico extends DepthFirstAdapter {
 		String nome = node.getNome().toString();
 		int pos = hash(nome);
 		class_hash.put(pos, new LinkedList<LinkedHashMap<Integer, Simbolo>>());
-		System.out.println("Nova linked list de hash tables!");
 		table = (LinkedList<LinkedHashMap<Integer, Simbolo>>) class_hash.get(pos);
-		System.out.println("Nova hash table!");
 		table.add(new LinkedHashMap<Integer, Simbolo>());
 		if (familia.containsKey(pos))
 		{
@@ -545,7 +543,6 @@ public class Semantico extends DepthFirstAdapter {
 		table.getLast().put(pos, new Simbolo("func", nome, valor, new ArrayList<String>()));
 		Simbolo func = table.getLast().get(pos);
 		table.add(new LinkedHashMap<Integer, Simbolo>());
-		System.out.println("Nova hash table!");
 		List<PParametro> copy = new ArrayList<PParametro>(node.getMid());
 		for (int i = 0; i < copy.size(); i++)
         {
@@ -581,7 +578,6 @@ public class Semantico extends DepthFirstAdapter {
 		table.getLast().put(pos, new Simbolo("procedimento", nome));
 
 		table.add(new LinkedHashMap<Integer, Simbolo>());
-		System.out.println("Nova hash table!");
 		List<PParametro> copy = new ArrayList<PParametro>(node.getMid());
 		for (int i = 0; i < copy.size(); i++)
         {
@@ -616,7 +612,6 @@ public class Semantico extends DepthFirstAdapter {
 		table.getLast().put(pos, new Simbolo("bloco", nome));
 
 		table.add(new LinkedHashMap<Integer, Simbolo>());
-		System.out.println("Nova hash table!");
 	}
 
 	@Override
@@ -633,7 +628,6 @@ public class Semantico extends DepthFirstAdapter {
 		table.getLast().put(pos, new Simbolo("bloco_exp", nome));
 
 		table.add(new LinkedHashMap<Integer, Simbolo>());
-		System.out.println("Nova hash table!");
 	}
 
 	@Override
